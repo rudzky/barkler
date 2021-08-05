@@ -3,7 +3,7 @@ import { gql, useQuery } from "@apollo/client";
 
 const USERS_QUERY = gql`
   query USERS_QUERY {
-    users {
+    allUsers {
       name
     }
   }
@@ -11,6 +11,7 @@ const USERS_QUERY = gql`
 
 interface User {
   name: string;
+  id: number;
 }
 
 export default function Users() {
@@ -20,8 +21,8 @@ export default function Users() {
   if (error) return <p>{error.message}</p>;
   return (
     <div>
-      {data.users.map((user: User) => (
-        <p>{user.name}</p>
+      {data.allUsers.map((user: User) => (
+        <p key={user.id}>{user.name}</p>
       ))}
     </div>
   );
