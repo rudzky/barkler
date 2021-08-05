@@ -66,16 +66,20 @@ function Signup() {
         <Form>
           <Field name="email" type="text" placeholder="Email" />
           <ErrorMessage name="email" component={"div"} />
+
           <Field name="name" type="text" placeholder="Name" />
           <ErrorMessage name="name" component={"div"} />
+
           <Field name="password" type="password" placeholder="Password" />
           <ErrorMessage name="password" component={"div"} />
+
           <Field
             name="confirmPassword"
-            type="text"
+            type="password"
             placeholder="Confirm Password"
           />
           <ErrorMessage name="confirmPassword" component={"div"} />
+
           <button type="submit">Signup</button>
         </Form>
       </Formik>
